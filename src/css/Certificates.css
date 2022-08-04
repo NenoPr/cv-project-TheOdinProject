@@ -1,0 +1,111 @@
+
+
+#certification-container {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+#add-cert-button {
+    position: absolute;
+    bottom: .5rem;
+    right: 45%;
+    left: 45%;
+    width: fit-content;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#certification-container:hover #add-cert-button {
+    visibility: unset;
+}
+
+#certification-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
+.cert-component {
+    grid-area: 1 / 2 / 1 / 2;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 .1rem .01rem gray;
+    border: .1rem solid gray;
+    border-radius: .5rem;
+    padding: .5rem;
+    gap: .5rem;
+    width: 90%;
+    margin-left: 3rem;
+    margin-bottom: .5rem;
+    position: relative;
+}
+
+#edit-cert-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 6rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#save-cert-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#remove-cert-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(188, 36, 36);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.cert-component:hover #remove-cert-button {
+    visibility: unset;
+}
+
+.cert-component:hover #save-cert-button {
+    visibility: unset;
+}
+
+.cert-component:hover #edit-cert-button {
+    visibility: unset;
+}
+
+.cert-info-wrapper {
+    display: grid;
+    grid-template: 1fr / 1fr 5fr;
+    gap: 1rem;
+}
+
+span {
+    grid-area: 1 / 1 / 1 / 1;
+    justify-self: flex-end;
+}
+
+#cert-title {
+    font-weight: 700;
+}

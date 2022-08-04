@@ -1,0 +1,100 @@
+
+
+#basic-info-component {
+    grid-area: 1 / 1 / 7 / 1;
+    display: flex;
+    flex-direction: column;
+    border: .2rem solid black;
+    border-radius: .5rem;
+    background-color: gray;
+    padding: 3rem;
+    position: relative;
+    gap: .25rem;
+}
+
+#edit-profile-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#basic-info-component:hover #edit-profile-button {
+    visibility: unset;
+}
+
+.profile-info-wrapper > input {
+    font-size: 1.1rem;
+    font-weight: 400;
+    width: fit-content;
+    /* background-color: inherit; */
+    color: black;
+    border: .15rem solid rgb(14, 148, 206);
+    border-radius: .5rem;
+}
+
+input:focus {
+    outline: .2rem solid rgb(14, 148, 206);
+    border: .15rem solid rgba(14, 148, 206, 0);
+}
+
+#profile-picture {
+    max-width: 20rem;
+    border-radius: .5rem;
+}
+
+#profile-name {
+    display: flex;
+    gap: .5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+#profile-name > input {
+    width: 50%;
+    height: 2rem;
+    font-size: 1.5rem;
+    /* background-color: inherit; */
+    color: black;
+    border: .15rem solid rgb(14, 148, 206);
+    border-radius: .5rem;
+}
+
+.profile-info {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+span {
+    grid-area: 1 / 1 / 1 / 1;
+    justify-self: flex-start;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+.profile-info-wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template: 1fr / 1fr 3.9fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-info-wrapper > div {
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+img {
+    align-self: center;
+}

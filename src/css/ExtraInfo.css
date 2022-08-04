@@ -1,0 +1,117 @@
+
+
+#extra-info-container {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+#add-info-button {
+    position: absolute;
+    bottom: .5rem;
+    right: 45%;
+    left: 45%;
+    width: fit-content;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#extra-info-container:hover #add-info-button {
+    visibility: unset;
+}
+
+#extra-info-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
+.extra-info-component {
+    grid-area: 1 / 2 / 1 / 2;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 .1rem .01rem gray;
+    border: .1rem solid gray;
+    border-radius: .5rem;
+    padding: .5rem;
+    gap: .5rem;
+    width: 90%;
+    margin-left: 3rem;
+    margin-bottom: .5rem;
+    position: relative;
+}
+
+#edit-info-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 6rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#save-info-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#remove-info-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(188, 36, 36);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.extra-info-component:hover #remove-info-button {
+    visibility: unset;
+}
+
+.extra-info-component:hover #save-info-button {
+    visibility: unset;
+}
+
+.extra-info-component:hover #edit-info-button {
+    visibility: unset;
+}
+
+.extra-info-wrapper {
+    display: grid;
+    grid-template: 1fr / 1fr 5fr;
+    gap: 1rem;
+}
+
+span {
+    grid-area: 1 / 1 / 1 / 1;
+    justify-self: flex-end;
+}
+
+textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;;
+}
+
+#info-title {
+    font-weight: 700;
+}

@@ -1,0 +1,111 @@
+
+
+#language-container {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+#add-lang-button {
+    position: absolute;
+    bottom: .5rem;
+    right: 45%;
+    left: 45%;
+    width: fit-content;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#language-container:hover #add-lang-button {
+    visibility: unset;
+}
+
+#language-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
+.lang-component {
+    grid-area: 1 / 2 / 1 / 2;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 .1rem .01rem gray;
+    border: .1rem solid gray;
+    border-radius: .5rem;
+    padding: .5rem;
+    gap: .5rem;
+    width: 90%;
+    margin-left: 3rem;
+    margin-bottom: .5rem;
+    position: relative;
+}
+
+#edit-lang-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 6rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#save-lang-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(25, 116, 207);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#remove-lang-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 1rem;
+    background-color: rgb(188, 36, 36);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.lang-component:hover #remove-lang-button {
+    visibility: unset;
+}
+
+.lang-component:hover #save-lang-button {
+    visibility: unset;
+}
+
+.lang-component:hover #edit-lang-button {
+    visibility: unset;
+}
+
+.cert-lang-wrapper {
+    display: grid;
+    grid-template: 1fr / 1fr 5fr;
+    gap: 1rem;
+}
+
+span {
+    grid-area: 1 / 1 / 1 / 1;
+    justify-self: flex-end;
+}
+
+#lang-name {
+    font-weight: 700;
+}
