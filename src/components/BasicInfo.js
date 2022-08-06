@@ -55,32 +55,32 @@ class BasicInfo extends Component {
             return (
                 <form id="basic-info-component">
                     <div id="edit-profile-button" onClick={this.editProfile}>Save</div>
-                    <div className="profile-info-wrapper">
+                    <div className="profile-info-wrapper-edit">
                         <span>Profile Image Url</span>
                         <input alt="Profile" id="profile-image-url" value={this.state.profileImage} onChange={this.handleChange}/>
                     </div>
                     <img src={this.state.profileImage} alt="Profile" id="profile-picture"/>
-                    <div id="profile-name" className="profile-info">
+                    <div id="profile-name" className="profile-info edit-profile-name-state">
                         <input id="first-name" value={this.state.firstName} onChange={this.handleChange}/>
                         <input id="last-name" value={this.state.lastName} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper">
+                    <div className="profile-info-wrapper-edit">
                         <span>Phone</span>
                         <input id="profile-phone" className="profile-info" value={this.state.phone} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper">
+                    <div className="profile-info-wrapper-edit">
                         <span>Email</span>
                         <input id="profile-email" className="profile-info" value={this.state.email} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper">
+                    <div className="profile-info-wrapper-edit">
                         <span>Site Name</span>
                         <input id="profile-site" className="profile-info" value={this.state.site} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper">
+                    <div className="profile-info-wrapper-edit">
                         <span>Site Url</span>
                         <input id="profile-site-url" className="profile-info" value={this.state.siteURL} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper">
+                    <div className="profile-info-wrapper-edit">
                         <span>Location</span>
                         <input id="profile-location" className="profile-info" value={this.state.location} onChange={this.handleChange}/>
                     </div>

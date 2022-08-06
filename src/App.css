@@ -18,7 +18,9 @@
     margin-left: -10vw;
     margin-right: -10vw;
     padding: 1rem;
-    border-bottom: .2rem solid gray;
+    border-bottom: .2rem solid rgb(0, 0, 0);
+    color: white;
+    font-weight: 700;
 }
 
 #footer {
@@ -30,20 +32,25 @@
     color: white;
     margin-left: -10vw;
     margin-right: -10vw;
+    padding: .5rem;
 }
 
 
 #main-content-container {
     grid-area: 2 / 1 / 2 / 1;
     display: grid;
-    grid-template: repeat(7,auto) / 1fr 10fr;
+    grid-template: repeat(7,auto) / auto auto;
     gap: 1rem;
     padding: 2rem;
+    position: relative;
 }
 
 #profile-info-container {
-    grid-area: 1 / 1 / 10 / 1;
-    width: 30rem;
+    grid-area: 1 / 1 / 1 / 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding-top: 1rem;
 }
 
 #root-experience-container {

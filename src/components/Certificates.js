@@ -96,7 +96,7 @@ class Experience extends Component {
         return (
             <div id="certification-container">
                 <div id="certification-title" >Certificates</div>
-                <div id="add-cert-button" onClick={this.manageEducation}>Add Education</div>
+                <div id="add-cert-button" onClick={this.manageEducation}>Add Certificate</div>
                 {CertCompleted.map((exp) => {
 
                     if (exp.editCert === true) {

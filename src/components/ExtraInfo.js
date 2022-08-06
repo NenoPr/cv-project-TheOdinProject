@@ -84,7 +84,7 @@ class Experience extends Component {
         return (
             <div id="extra-info-container">
                 <div id="extra-info-title" >Extra Info</div>
-                <div id="add-info-button" onClick={this.manageExtraInfo}>Add Extra Info</div>
+                <div id="add-info-button" onClick={this.manageExtraInfo}>Add Extra Information</div>
                 {ExtraInfoData.map((exp) => {
 
                     if (exp.editExtraInfo === true) {

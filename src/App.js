@@ -54,7 +54,7 @@ class App extends React.Component {
             </div>
           </div>
 
-          <div id="footer"> CV Maker by NenoPr for The Odin Project</div>
+          <div id="footer"> CV Maker by :&nbsp;<img src={require("./GitHub-Mark-32px.png")} alt="Github logo" /><a href='https://github.com/NenoPr'>&nbsp;NenoPr</a></div>
         </div>
     )
   }
