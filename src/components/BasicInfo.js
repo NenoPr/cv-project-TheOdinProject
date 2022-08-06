@@ -75,7 +75,7 @@ class BasicInfo extends Component {
                         <input id="profile-email" className="profile-info" value={this.state.email} onChange={this.handleChange}/>
                     </div>
                     <div className="profile-info-wrapper">
-                        <span>Site Name</span>
+                        <span>Site</span>
                         <input id="profile-site" className="profile-info" value={this.state.site} onChange={this.handleChange}/>
                     </div>
                     <div className="profile-info-wrapper">
@@ -86,9 +86,9 @@ class BasicInfo extends Component {
                         <span>Location</span>
                         <input id="profile-location" className="profile-info" value={this.state.location} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper">
-                        <span>About Me</span>
-                        <input id="profile-description" className="profile-info" value={this.state.description} onChange={this.handleChange}/>
+                    <div className="profile-info-wrapper-desc">
+                        <div>About Me</div>
+                        <textarea rows={10} cols={30} id="profile-description" className="profile-info" value={this.state.description} onChange={this.handleChange}/>
                     </div>
                 
                 </form>
