@@ -5,7 +5,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding: 1rem;
-    padding-bottom: 4rem;
+    transition: padding-bottom .5s;
 }
 
 #add-cert-button {
@@ -20,9 +20,16 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .5s;
+    opacity: 0;
+}
+
+#certification-container:hover {
+    padding-bottom: 4rem;
 }
 
 #certification-container:hover #add-cert-button {
+    opacity: 1;
     visibility: unset;
 }
 
@@ -55,6 +62,8 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 #save-cert-button {
@@ -67,6 +76,8 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 #remove-cert-button {
@@ -79,17 +90,22 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 .cert-component:hover #remove-cert-button {
+    opacity: 1;
     visibility: unset;
 }
 
 .cert-component:hover #save-cert-button {
+    opacity: 1;
     visibility: unset;
 }
 
 .cert-component:hover #edit-cert-button {
+    opacity: 1;
     visibility: unset;
 }
 

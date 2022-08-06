@@ -5,8 +5,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding: 1rem;
-    padding-bottom: 4rem;
-    align-self: center;
+    transition: padding-bottom .5s;
 }
 
 #add-work-experiences-button {
@@ -21,9 +20,16 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .5s;
+    opacity: 0;
+}
+
+#work-experience-container:hover {
+    padding-bottom: 4rem;
 }
 
 #work-experience-container:hover #add-work-experiences-button {
+    opacity: 1;
     visibility: unset;
 }
 
@@ -50,6 +56,8 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 #save-work-experiences-button {
@@ -62,6 +70,8 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 #remove-work-experiences-button {
@@ -74,17 +84,22 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 .experience-component:hover #remove-work-experiences-button {
+    opacity: 1;
     visibility: unset;
 }
 
 .experience-component:hover #save-work-experiences-button {
+    opacity: 1;
     visibility: unset;
 }
 
 .experience-component:hover #edit-work-experiences-button {
+    opacity: 1;
     visibility: unset;
 }
 
@@ -96,7 +111,7 @@
 
 .experience-info-wrapper {
     display: grid;
-    grid-template: 1fr / 1fr 5fr;
+    grid-template: 1fr / 1fr 10fr;
     gap: 1rem;
 }
 

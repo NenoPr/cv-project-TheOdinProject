@@ -3,7 +3,7 @@ import uniqid from "uniqid"
 
 const workExperiences = [{
     jobTitle: "Front-end Developer",
-    employerName: "Microsoft",
+    employerName: "Microsoft Inc.",
     jobDescription: "Developed and maintained the front end user experience for various projects. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae asperiores sed dolores esse! Itaque perferendis ratione ad illo repellat libero placeat ipsa harum sit necessitatibus, saepe sunt quae dolor ipsam?",
     durationFrom: "12.12.2020",
     durationTo: "14.4.2022",
@@ -12,7 +12,7 @@ const workExperiences = [{
 },
 {
     jobTitle: "AI Engineer",
-    employerName: "Nvidia",
+    employerName: "Nvidia Inc.",
     jobDescription: "Developing and maintaining  ML models, specializing in image recognition. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae asperiores sed dolores esse! Itaque perferendis ratione ad illo repellat libero placeat ipsa harum sit necessitatibus, saepe sunt quae dolor ipsam?",
     durationFrom: "15.4.2022",
     durationTo: "Present",

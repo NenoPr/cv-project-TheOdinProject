@@ -1,20 +1,8 @@
 import React from 'react';
+import ReactToPrint, { PrintContextConsumer } from "react-to-print";
+import { ComponentToPrint } from 'react-to-print';
 import './App.css';
-import './css/BasicInfo.css'
-import './css/Experience.css'
-import './css/Education.css'
-import './css/Certificates.css'
-import './css/Skills.css'
-import './css/Languages.css'
-import './css/ExtraInfo.css'
-import BasicInfo from './components/BasicInfo';
-import Experience from './components/Experience';
-import Education from './components/Education'
-import Certificates from './components/Certificates'
-import Skills from './components/Skills'
-import Languages from './components/Languages'
-import ExtraInfo from './components/ExtraInfo'
-
+import CVContainer from './CVContainer';
 
 class App extends React.Component {
   constructor() {
@@ -25,33 +13,37 @@ class App extends React.Component {
     }
   }
 
+  getInitialState() {
+  	return { state: 0 };
+  }
+  
+
+  componentDidMount() {
+    const height = document.getElementById('div-for-printing').clientHeight;
+    this.setState({ height });
+  }
+
   render() {
+
     return (
         <div id="main-container">
           <div id="header"> CV Maker</div>
+          <div id="div-holding-print">
+            <div ref={el=>this.componentRef=el} id="div-for-printing">
+              <CVContainer />
+            </div>
+          </div>
+          <div id="generate-cv">
+          <ReactToPrint
+            trigger={() => (
+              <button>Generate CV</button>
+            )}
+            content = {() => this.componentRef}
+            documentTitle="CV Output"
+            pageStyle={`@page { size: 1280px ${this.state.height}px; }`}
 
-          <div id="main-content-container">
-            <div id="profile-info-container">
-              <BasicInfo />
-            </div>
-            <div id="root-experience-container">
-              <Experience />
-            </div>
-            <div id="root-education-container">
-              <Education />
-            </div>
-            <div id="root-certificates-container">
-              <Certificates />
-            </div>
-            <div id="root-skills-container">
-              <Skills />
-            </div>
-            <div id="root-languages-container">
-              <Languages />
-            </div>
-            <div id="root-extra-container">
-              <ExtraInfo />
-            </div>
+          />
+          
           </div>
 
           <div id="footer"> CV Maker by :&nbsp;<img src={require("./GitHub-Mark-32px.png")} alt="Github logo" /><a href='https://github.com/NenoPr'>&nbsp;NenoPr</a></div>

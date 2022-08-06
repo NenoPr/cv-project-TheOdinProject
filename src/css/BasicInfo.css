@@ -1,15 +1,15 @@
 
 
 #basic-info-component {
-    grid-area: 1 / 1 / 7 / 1;
+    grid-area: 1 / 1 / 1 / 1;
     display: flex;
     flex-direction: column;
     border: .2rem solid black;
     border-radius: .5rem;
-    background-color: gray;
-    padding: 1.5rem;
+    padding: 1rem;
     position: relative;
     gap: .25rem;
+    max-width: 280px;
 }
 
 #edit-profile-button {
@@ -22,14 +22,17 @@
     color: white;
     cursor: pointer;
     visibility: hidden;
+    transition: opacity .1s;
+    opacity: 0;
 }
 
 #basic-info-component:hover #edit-profile-button {
+    opacity: 1;
     visibility: unset;
 }
 
 .profile-info-wrapper > input {
-    font-size: 1.1rem;
+    font-size: .7rem;
     font-weight: 400;
     width: fit-content;
     /* background-color: inherit; */
@@ -52,13 +55,13 @@ input:focus {
     display: flex;
     gap: .5rem;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     align-self: center;
 }
 
 #profile-name > input {
-    height: 2rem;
+    height: 1.5rem;
     font-size: 1.5rem;
     /* background-color: inherit; */
     color: black;
@@ -71,7 +74,7 @@ input:focus {
 }
 
 .profile-info {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: .5rem;
     border: .15rem solid rgba(14, 148, 206, 0);
