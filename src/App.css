@@ -55,6 +55,7 @@
     min-width: 720px;
     border: .5rem solid rgb(255, 255, 255);
     border-radius: .5rem;
+    padding-top: 1rem;
 }
 
 #profile-info-container {
