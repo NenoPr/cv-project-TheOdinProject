@@ -9,7 +9,7 @@ class BasicInfo extends Component {
         this.state = {
             isInEditState: false,
 
-            profileImage: "default-profile.jpg",
+            profileImage: "default-profile.png",
             firstName: "Emma",
             lastName: "Nimfell",
             phone:  "098 758 4123",
