@@ -50,7 +50,7 @@ class Experience extends Component {
                 else exp.editExtraInfo = true
             } else if (exp.editExtraInfo === true) exp.editExtraInfo = false
             });
-        } else if (e.target.innerText === "Add Extra Info") {
+        } else if (e.target.innerText === "Add Extra Information") {
             let noSkip = true;
             ExtraInfoData.map((data) => {
                 if (data.editExtraInfo === true) noSkip = false

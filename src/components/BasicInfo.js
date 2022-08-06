@@ -9,13 +9,13 @@ class BasicInfo extends Component {
         this.state = {
             isInEditState: false,
 
-            profileImage: "Ina-profile.jpg",
-            firstName: "Ninomae",
-            lastName: "Ina'nis",
+            profileImage: "default-profile.jpg",
+            firstName: "Emma",
+            lastName: "Nimfell",
             phone:  "098 758 4123",
-            email: "ninomaeinanis@tentacult.com",
-            site: "Ina's Wah Site",
-            siteURL: "https://www.youtube.com/channel/UCMwGHR0BTZuLsmjY_NT5Pwg",
+            email: "emmanimfell.buissness@gmail.com",
+            site: "EmmaNimfellSite.com",
+            siteURL: "https://www.youtube.com",
             location: "Ontario, Canada",
         }
     }
@@ -55,32 +55,32 @@ class BasicInfo extends Component {
             return (
                 <form id="basic-info-component">
                     <div id="edit-profile-button" onClick={this.editProfile}>Save</div>
-                    <div className="profile-info-wrapper-edit">
+                    <div className="profile-info-wrapper">
                         <span>Profile Image Url</span>
                         <input alt="Profile" id="profile-image-url" value={this.state.profileImage} onChange={this.handleChange}/>
                     </div>
                     <img src={this.state.profileImage} alt="Profile" id="profile-picture"/>
-                    <div id="profile-name" className="profile-info edit-profile-name-state">
+                    <div id="profile-name" className="profile-info">
                         <input id="first-name" value={this.state.firstName} onChange={this.handleChange}/>
                         <input id="last-name" value={this.state.lastName} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper-edit">
+                    <div className="profile-info-wrapper">
                         <span>Phone</span>
                         <input id="profile-phone" className="profile-info" value={this.state.phone} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper-edit">
+                    <div className="profile-info-wrapper">
                         <span>Email</span>
                         <input id="profile-email" className="profile-info" value={this.state.email} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper-edit">
+                    <div className="profile-info-wrapper">
                         <span>Site Name</span>
                         <input id="profile-site" className="profile-info" value={this.state.site} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper-edit">
+                    <div className="profile-info-wrapper">
                         <span>Site Url</span>
                         <input id="profile-site-url" className="profile-info" value={this.state.siteURL} onChange={this.handleChange}/>
                     </div>
-                    <div className="profile-info-wrapper-edit">
+                    <div className="profile-info-wrapper">
                         <span>Location</span>
                         <input id="profile-location" className="profile-info" value={this.state.location} onChange={this.handleChange}/>
                     </div>
