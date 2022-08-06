@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/cv-project-TheOdinProject/static/css/main.a54960a0.css",
+    "main.css": "/cv-project-TheOdinProject/static/css/main.ae72b01e.css",
     "main.js": "/cv-project-TheOdinProject/static/js/main.ee560e05.js",
     "index.html": "/cv-project-TheOdinProject/index.html",
-    "main.a54960a0.css.map": "/cv-project-TheOdinProject/static/css/main.a54960a0.css.map",
+    "main.ae72b01e.css.map": "/cv-project-TheOdinProject/static/css/main.ae72b01e.css.map",
     "main.ee560e05.js.map": "/cv-project-TheOdinProject/static/js/main.ee560e05.js.map"
   },
   "entrypoints": [
-    "static/css/main.a54960a0.css",
+    "static/css/main.ae72b01e.css",
     "static/js/main.ee560e05.js"
   ]
 }
