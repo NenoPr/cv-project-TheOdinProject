@@ -20,7 +20,23 @@ class App extends React.Component {
 
   componentDidMount() {
     const height = document.getElementById('div-for-printing').clientHeight;
-    this.setState({ height });
+    this.setState({ height: height });
+  }
+
+  // componentDidUpdate(prevState) {
+  //   const updateHeight = document.getElementById('div-for-printing').clientHeight;
+  //   if (updateHeight !== this.state.height) {
+  //     this.setState({ height: updateHeight });
+  //   }
+  //   console.log("Old height",this.state.height)
+  //   console.log("New height",updateHeight)
+  // }
+
+  async reRender(holder) {
+    console.log("AAAAAAAAAAAAAAAAAAAAAAA")
+    const height = document.getElementById('div-for-printing').clientHeight;
+    this.setState({ height: height });
+    console.log("adawd",this.state.height)
   }
 
   render() {
@@ -33,19 +49,16 @@ class App extends React.Component {
               <CVContainer />
             </div>
           </div>
-          <div id="generate-cv">
-          <ReactToPrint
-            trigger={() => (
-              <button>Generate CV</button>
-            )}
-            content = {() => this.componentRef}
-            documentTitle="CV Output"
-            pageStyle={`@page { size: 1280px ${this.state.height}px; }`}
-
-          />
-          
+          <div id="generate-cv" onMouseEnter={async () => {await this.reRender("Example");} }>
+            <ReactToPrint
+              trigger={() => (
+                <button>Generate CV</button>
+              )}
+              content = {() => this.componentRef}
+              documentTitle="CV Output"
+              pageStyle={`@page { size: 1280px ${this.state.height}px; }`}
+            />
           </div>
-
           <div id="footer"> CV Maker by :&nbsp;<img src={require("./GitHub-Mark-32px.png")} alt="Github logo" /><a href='https://github.com/NenoPr' target={"_blank"}>&nbsp;NenoPr</a></div>
         </div>
     )
