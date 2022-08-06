@@ -40,7 +40,7 @@ class App extends React.Component {
             )}
             content = {() => this.componentRef}
             documentTitle="CV Output"
-            pageStyle={`@page { size: 1280px ${this.state.height}px; }`}
+            pageStyle={`@page { size: 1280px ${this.state.height + 20}px; }`}
 
           />
           
