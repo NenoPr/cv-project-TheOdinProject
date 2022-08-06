@@ -93,67 +93,75 @@ class Experience extends Component {
 
     render() {
 
-        return (
-            <div id="education-container">
-                <div id="education-title" >Education</div>
-                <div id="add-education-button" onClick={this.manageEducation}>Add Education</div>
-                {EducationCompleted.map((exp) => {
+        if (EducationCompleted[0] === undefined) {
+            return (
+                <div id="education-container">
+                    <div id="add-education-button" onClick={this.manageEducation}>Add Education</div>
+                </div>
+            )
+        } else {
+            return (
+                <div id="education-container">
+                    <div id="education-title" >Education</div>
+                    <div id="add-education-button" onClick={this.manageEducation}>Add Education</div>
+                    {EducationCompleted.map((exp) => {
 
-                    if (exp.editEducation === true) {
-                        return (
-                        <div className="education-component" >
-                            <div id="save-education-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Save</div>
-                            <div className="education-info-wrapper">
-                                <span>Title:</span>
-                                <input id="education-outcome" value={this.state.educationOutcome} key={exp.educationOutcome} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="education-info-wrapper">
-                                <span>Area of Study:</span>
-                                <input id="education-area" value={this.state.educationArea} key={exp.educationArea} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="education-info-wrapper">
-                                <span>Institution Name:</span>
-                                <input id="education-provider" value={this.state.educationProvider} key={exp.educationProvider} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="education-info-wrapper">
-                                <span>Duration From:</span>
-                                <input id="duration-from" value={this.state.durationFrom} key={exp.durationFrom} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="education-info-wrapper">
-                                <span>Duration To:</span>
-                                <input id="duration-to" value={this.state.durationTo} key={exp.durationTo} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                        </div>
-                        );
-                    } else {
-                        return (
-                            <div className="education-component">
-                                <div id="edit-education-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Edit</div>
-                                <div id="remove-education-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Remove</div>
+                        if (exp.editEducation === true) {
+                            return (
+                            <div className="education-component" >
+                                <div id="save-education-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Save</div>
                                 <div className="education-info-wrapper">
                                     <span>Title:</span>
-                                    <div id="education-outcome" key={exp.educationOutcome}>{exp.educationOutcome}</div>
+                                    <input id="education-outcome" value={this.state.educationOutcome} key={exp.educationOutcome} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="education-info-wrapper">
                                     <span>Area of Study:</span>
-                                    <div id="education-area" key={exp.educationArea}>{exp.educationArea}</div>
+                                    <input id="education-area" value={this.state.educationArea} key={exp.educationArea} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="education-info-wrapper">
-                                    <span>Institution Name:</span>
-                                    <div id="education-provider" key={exp.educationProvider}>{exp.educationProvider}</div>
+                                    <span>From:</span>
+                                    <input id="education-provider" value={this.state.educationProvider} key={exp.educationProvider} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="education-info-wrapper">
-                                    <span>Duration:</span>
-                                    <div id="duration-from-to" key={exp.durationFrom}>{exp.durationFrom} / {exp.durationTo}</div>
+                                    <span>Duration From:</span>
+                                    <input id="duration-from" value={this.state.durationFrom} key={exp.durationFrom} data={exp.id} onChange={this.handleChange} />
+                                </div>
+                                <div className="education-info-wrapper">
+                                    <span>Duration To:</span>
+                                    <input id="duration-to" value={this.state.durationTo} key={exp.durationTo} data={exp.id} onChange={this.handleChange} />
                                 </div>
                             </div>
-                        )
-                    }
+                            );
+                        } else {
+                            return (
+                                <div className="education-component">
+                                    <div id="edit-education-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Edit</div>
+                                    <div id="remove-education-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Remove</div>
+                                    <div className="education-info-wrapper">
+                                        <span>Title:</span>
+                                        <div id="education-outcome" key={exp.educationOutcome}>{exp.educationOutcome}</div>
+                                    </div>
+                                    <div className="education-info-wrapper">
+                                        <span>Area of Study:</span>
+                                        <div id="education-area" key={exp.educationArea}>{exp.educationArea}</div>
+                                    </div>
+                                    <div className="education-info-wrapper">
+                                        <span>From:</span>
+                                        <div id="education-provider" key={exp.educationProvider}>{exp.educationProvider}</div>
+                                    </div>
+                                    <div className="education-info-wrapper">
+                                        <span>Duration:</span>
+                                        <div id="duration-from-to" key={exp.durationFrom}>{exp.durationFrom} / {exp.durationTo}</div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        
+                    } )}
                     
-                } )}
-                
-            </div>
-        )
+                </div>
+            )
+        }
     }
 }
 

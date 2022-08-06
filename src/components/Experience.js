@@ -95,67 +95,75 @@ class Experience extends Component {
 
     render() {
 
-        return (
-            <div id="work-experience-container">
-                <div id="work-experience-title" >Work Experience</div>
-                <div id="add-work-experiences-button" onClick={this.manageWorkExperiences}>Add Work Experience</div>
-                {workExperiences.map((exp) => {
-
-                    if (exp.editJob === true) {
-                        return (
-                        <div className="experience-component" >
-                            <div id="save-work-experiences-button" key={exp.id} data={exp.id} onClick={this.manageWorkExperiences}>Save</div>
-                            <div className="experience-info-wrapper">
-                                <span>Title:</span>
-                                <input id="job-title" value={this.state.jobTitle} key={exp.jobTitle} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="experience-info-wrapper">
-                                <span>Employer:</span>
-                                <input id="employer-name" value={this.state.employerName} key={exp.employerName} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="experience-info-wrapper">
-                                <span>Job Description:</span>
-                                <textarea rows={5} id="job-description" value={this.state.jobDescription} key={exp.jobDescription} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="experience-info-wrapper">
-                                <span>Duration From:</span>
-                                <input id="duration-from" value={this.state.durationFrom} key={exp.durationFrom} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="experience-info-wrapper">
-                                <span>Duration To:</span>
-                                <input id="duration-to" value={this.state.durationTo} key={exp.durationTo} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                        </div>
-                        );
-                    } else {
-                        return (
-                            <div className="experience-component">
-                                <div id="edit-work-experiences-button" key={exp.id} data={exp.id} onClick={this.manageWorkExperiences}>Edit</div>
-                                <div id="remove-work-experiences-button" key={exp.id} data={exp.id} onClick={this.manageWorkExperiences}>Remove</div>
+        if (workExperiences[0] === undefined) {
+            return (
+                <div id="work-experience-container">
+                    <div id="add-work-experiences-button" onClick={this.manageWorkExperiences}>Add Work Experience</div>
+                </div>
+            )
+        } else {
+            return (
+                <div id="work-experience-container">
+                    <div id="work-experience-title" >Work Experience</div>
+                    <div id="add-work-experiences-button" onClick={this.manageWorkExperiences}>Add Work Experience</div>
+                    {workExperiences.map((exp) => {
+    
+                        if (exp.editJob === true) {
+                            return (
+                            <div className="experience-component" >
+                                <div id="save-work-experiences-button" key={exp.id} data={exp.id} onClick={this.manageWorkExperiences}>Save</div>
                                 <div className="experience-info-wrapper">
                                     <span>Title:</span>
-                                    <div id="job-title" key={exp.jobTitle}>{exp.jobTitle}</div>
+                                    <input id="job-title" value={this.state.jobTitle} key={exp.jobTitle} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="experience-info-wrapper">
                                     <span>Employer:</span>
-                                    <div id="employer-name" key={exp.employerName}>{exp.employerName}</div>
+                                    <input id="employer-name" value={this.state.employerName} key={exp.employerName} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="experience-info-wrapper">
                                     <span>Job Description:</span>
-                                    <div id="job-description" key={exp.jobDescription}>{exp.jobDescription}</div>
+                                    <textarea rows={5} id="job-description" value={this.state.jobDescription} key={exp.jobDescription} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="experience-info-wrapper">
-                                    <span>Duration:</span>
-                                    <div id="duration-from-to" key={exp.durationFrom}>{exp.durationFrom} / {exp.durationTo}</div>
+                                    <span>Duration From:</span>
+                                    <input id="duration-from" value={this.state.durationFrom} key={exp.durationFrom} data={exp.id} onChange={this.handleChange} />
+                                </div>
+                                <div className="experience-info-wrapper">
+                                    <span>Duration To:</span>
+                                    <input id="duration-to" value={this.state.durationTo} key={exp.durationTo} data={exp.id} onChange={this.handleChange} />
                                 </div>
                             </div>
-                        )
-                    }
+                            );
+                        } else {
+                            return (
+                                <div className="experience-component">
+                                    <div id="edit-work-experiences-button" key={exp.id} data={exp.id} onClick={this.manageWorkExperiences}>Edit</div>
+                                    <div id="remove-work-experiences-button" key={exp.id} data={exp.id} onClick={this.manageWorkExperiences}>Remove</div>
+                                    <div className="experience-info-wrapper">
+                                        <span>Title:</span>
+                                        <div id="job-title" key={exp.jobTitle}>{exp.jobTitle}</div>
+                                    </div>
+                                    <div className="experience-info-wrapper">
+                                        <span>Employer:</span>
+                                        <div id="employer-name" key={exp.employerName}>{exp.employerName}</div>
+                                    </div>
+                                    <div className="experience-info-wrapper">
+                                        <span>Job Description:</span>
+                                        <div id="job-description" key={exp.jobDescription}>{exp.jobDescription}</div>
+                                    </div>
+                                    <div className="experience-info-wrapper">
+                                        <span>Duration:</span>
+                                        <div id="duration-from-to" key={exp.durationFrom}>{exp.durationFrom} / {exp.durationTo}</div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        
+                    } )}
                     
-                } )}
-                
-            </div>
-        )       
+                </div>
+            )
+        }  
     }
 }
 

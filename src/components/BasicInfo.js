@@ -12,11 +12,12 @@ class BasicInfo extends Component {
             profileImage: "default-profile.jpg",
             firstName: "Emma",
             lastName: "Nimfell",
-            phone:  "098 758 4123",
-            email: "emmanimfell.buissness@gmail.com",
-            site: "EmmaNimfellSite.com",
+            phone:  "998 758 4123",
+            email: "emma.nimfell@gmail.com",
+            site: "Emma Nimfell's Site",
             siteURL: "https://www.youtube.com",
             location: "Ontario, Canada",
+            description: "From an early age I’ve always been deeply interested in computing. It was my dad, introducing me to the computer systems at his work place that first sparked this interest. I can always remember the feeling of wanting to know just how computers worked, why they worked and what else they could do."
         }
     }
 
@@ -30,6 +31,7 @@ class BasicInfo extends Component {
         else if (e.target.id === "profile-site") this.setState({ site: e.target.value })
         else if (e.target.id === "profile-site-url") this.setState({ siteURL: e.target.value })
         else if (e.target.id === "profile-location") this.setState({ location: e.target.value })
+        else if (e.target.id === "profile-description") this.setState({ description: e.target.value })
 
         // if (e.target.id === "first-name") {let firstNameHolder = e.target.value}
         // else if (e.target.id === "last-name") { let lastNameHolder = e.target.value }
@@ -60,7 +62,7 @@ class BasicInfo extends Component {
                         <input alt="Profile" id="profile-image-url" value={this.state.profileImage} onChange={this.handleChange}/>
                     </div>
                     <img src={this.state.profileImage} alt="Profile" id="profile-picture"/>
-                    <div id="profile-name" className="profile-info">
+                    <div id="profile-name" className="profile-name-edit-state">
                         <input id="first-name" value={this.state.firstName} onChange={this.handleChange}/>
                         <input id="last-name" value={this.state.lastName} onChange={this.handleChange}/>
                     </div>
@@ -84,6 +86,10 @@ class BasicInfo extends Component {
                         <span>Location</span>
                         <input id="profile-location" className="profile-info" value={this.state.location} onChange={this.handleChange}/>
                     </div>
+                    <div className="profile-info-wrapper">
+                        <span>About Me</span>
+                        <input id="profile-description" className="profile-info" value={this.state.description} onChange={this.handleChange}/>
+                    </div>
                 
                 </form>
             )
@@ -97,22 +103,25 @@ class BasicInfo extends Component {
                         <div id="last-name">{this.state.lastName}</div>
                     </div>
                     <div className="profile-info-wrapper">
-                        <span>Phone</span>
+                        <span>Phone:</span>
                         <div id="profile-phone" className="profile-info"> {this.state.phone}</div>
                     </div>
                     <div className="profile-info-wrapper">
-                        <span>Email</span>
+                        <span>Email:</span>
                         <div id="profile-email" className="profile-info">{this.state.email}</div>
                     </div>
                     <div className="profile-info-wrapper">
-                        <span>Site</span>
+                        <span>Site:</span>
                         <a id="profile-site" href={this.state.siteURL} target="_blank" rel="noreferrer noopener" className="profile-info">{this.state.site}</a>
                     </div>
                     <div className="profile-info-wrapper">
-                        <span>Location</span>
+                        <span>Location:</span>
                         <div id="profile-location" className="profile-info">{this.state.location}</div>
                     </div>
-                    
+                    <div className="profile-info-wrapper-desc">
+                        <div>About Me</div>
+                        <div id="profile-description" className="profile-info">{this.state.description}</div>
+                    </div>
                 </div>
             )
         }

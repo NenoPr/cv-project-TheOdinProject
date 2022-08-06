@@ -81,47 +81,55 @@ class Experience extends Component {
 
     render() {
 
-        return (
-            <div id="language-container">
-                <div id="language-title" >Languages</div>
-                <div id="add-lang-button" onClick={this.manageLanguages}>Add Language</div>
-                {LangData.map((exp) => {
-
-                    if (exp.editLang === true) {
-                        return (
-                        <div className="lang-component" >
-                            <div id="save-lang-button" key={exp.id} data={exp.id} onClick={this.manageLanguages}>Save</div>
-                            <div className="cert-lang-wrapper">
-                                <span>Language:</span>
-                                <input id="lang-name" value={this.state.langName} key={exp.langName} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="cert-lang-wrapper">
-                                <span>Proficiency:</span>
-                                <input id="lang-proficiency" value={this.state.langProficiency} key={exp.langProficiency} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                        </div>
-                        );
-                    } else {
-                        return (
-                            <div className="lang-component">
-                                <div id="edit-lang-button" key={exp.id} data={exp.id} onClick={this.manageLanguages}>Edit</div>
-                                <div id="remove-lang-button" key={exp.id} data={exp.id} onClick={this.manageLanguages}>Remove</div>
+        if (LangData[0] === undefined) {
+            return (
+                <div id="language-container">
+                    <div id="add-lang-button" onClick={this.manageLanguages}>Add Language</div>
+                </div>
+            )
+        } else {
+            return (
+                <div id="language-container">
+                    <div id="language-title" >Languages</div>
+                    <div id="add-lang-button" onClick={this.manageLanguages}>Add Language</div>
+                    {LangData.map((exp) => {
+    
+                        if (exp.editLang === true) {
+                            return (
+                            <div className="lang-component" >
+                                <div id="save-lang-button" key={exp.id} data={exp.id} onClick={this.manageLanguages}>Save</div>
                                 <div className="cert-lang-wrapper">
                                     <span>Language:</span>
-                                    <div id="lang-name" key={exp.langName}>{exp.langName}</div>
+                                    <input id="lang-name" value={this.state.langName} key={exp.langName} data={exp.id} onChange={this.handleChange} />
                                 </div>
                                 <div className="cert-lang-wrapper">
                                     <span>Proficiency:</span>
-                                    <div id="lang-proficiency" key={exp.langProficiency}>{exp.langProficiency}</div>
+                                    <input id="lang-proficiency" value={this.state.langProficiency} key={exp.langProficiency} data={exp.id} onChange={this.handleChange} />
                                 </div>
                             </div>
-                        )
-                    }
+                            );
+                        } else {
+                            return (
+                                <div className="lang-component">
+                                    <div id="edit-lang-button" key={exp.id} data={exp.id} onClick={this.manageLanguages}>Edit</div>
+                                    <div id="remove-lang-button" key={exp.id} data={exp.id} onClick={this.manageLanguages}>Remove</div>
+                                    <div className="cert-lang-wrapper">
+                                        <span>Language:</span>
+                                        <div id="lang-name" key={exp.langName}>{exp.langName}</div>
+                                    </div>
+                                    <div className="cert-lang-wrapper">
+                                        <span>Proficiency:</span>
+                                        <div id="lang-proficiency" key={exp.langProficiency}>{exp.langProficiency}</div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        
+                    } )}
                     
-                } )}
-                
-            </div>
-        )
+                </div>
+            )
+        }
     }
 }
 

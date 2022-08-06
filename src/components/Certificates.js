@@ -93,67 +93,74 @@ class Experience extends Component {
 
     render() {
 
-        return (
-            <div id="certification-container">
-                <div id="certification-title" >Certificates</div>
-                <div id="add-cert-button" onClick={this.manageEducation}>Add Certificate</div>
-                {CertCompleted.map((exp) => {
-
-                    if (exp.editCert === true) {
-                        return (
-                        <div className="cert-component" >
-                            <div id="save-cert-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Save</div>
-                            <div className="cert-info-wrapper">
-                                <span>Title:</span>
-                                <input id="cert-title" value={this.state.certTitle} key={exp.certTitle} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="cert-info-wrapper">
-                                <span>Area of Study:</span>
-                                <input id="cert-provider" value={this.state.certProvider} key={exp.certProvider} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="cert-info-wrapper">
-                                <span>Institution Name:</span>
-                                <textarea rows={5} id="cert-desc" value={this.state.certDesc} key={exp.certDesc} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="cert-info-wrapper">
-                                <span>Duration From:</span>
-                                <input id="duration-from" value={this.state.durationFrom} key={exp.durationFrom} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                            <div className="cert-info-wrapper">
-                                <span>Duration To:</span>
-                                <input id="duration-to" value={this.state.durationTo} key={exp.durationTo} data={exp.id} onChange={this.handleChange} />
-                            </div>
-                        </div>
-                        );
-                    } else {
-                        return (
-                            <div className="cert-component">
-                                <div id="edit-cert-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Edit</div>
-                                <div id="remove-cert-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Remove</div>
-                                <div className="cert-info-wrapper">
-                                    <span>Title:</span>
-                                    <div id="cert-title" key={exp.certTitle}>{exp.certTitle}</div>
+        if (CertCompleted[0] === undefined) {
+            return (
+                <div id="certification-container">
+                    <div id="add-cert-button" onClick={this.manageEducation}>Add Certificate</div>
+                </div>
+            )} else {
+                return (
+                    <div id="certification-container">
+                        <div id="certification-title" >Certificates</div>
+                        <div id="add-cert-button" onClick={this.manageEducation}>Add Certificate</div>
+                        {CertCompleted.map((exp) => {
+        
+                            if (exp.editCert === true) {
+                                return (
+                                <div className="cert-component" >
+                                    <div id="save-cert-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Save</div>
+                                    <div className="cert-info-wrapper">
+                                        <span>Title:</span>
+                                        <input id="cert-title" value={this.state.certTitle} key={exp.certTitle} data={exp.id} onChange={this.handleChange} />
+                                    </div>
+                                    <div className="cert-info-wrapper">
+                                        <span>Area of Study:</span>
+                                        <input id="cert-provider" value={this.state.certProvider} key={exp.certProvider} data={exp.id} onChange={this.handleChange} />
+                                    </div>
+                                    <div className="cert-info-wrapper">
+                                        <span>Course Description:</span>
+                                        <textarea rows={5} id="cert-desc" value={this.state.certDesc} key={exp.certDesc} data={exp.id} onChange={this.handleChange} />
+                                    </div>
+                                    <div className="cert-info-wrapper">
+                                        <span>Duration From:</span>
+                                        <input id="duration-from" value={this.state.durationFrom} key={exp.durationFrom} data={exp.id} onChange={this.handleChange} />
+                                    </div>
+                                    <div className="cert-info-wrapper">
+                                        <span>Duration To:</span>
+                                        <input id="duration-to" value={this.state.durationTo} key={exp.durationTo} data={exp.id} onChange={this.handleChange} />
+                                    </div>
                                 </div>
-                                <div className="cert-info-wrapper">
-                                    <span>Area of Study:</span>
-                                    <div id="cert-provider" key={exp.certProvider}>{exp.certProvider}</div>
-                                </div>
-                                <div className="cert-info-wrapper">
-                                    <span>Institution Name:</span>
-                                    <div id="cert-desc" key={exp.certDesc}>{exp.certDesc}</div>
-                                </div>
-                                <div className="cert-info-wrapper">
-                                    <span>Duration:</span>
-                                    <div id="duration-from-to" key={exp.durationFrom}>{exp.durationFrom} / {exp.durationTo}</div>
-                                </div>
-                            </div>
-                        )
-                    }
-                    
-                } )}
-                
-            </div>
-        )
+                                );
+                            } else {
+                                return (
+                                    <div className="cert-component">
+                                        <div id="edit-cert-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Edit</div>
+                                        <div id="remove-cert-button" key={exp.id} data={exp.id} onClick={this.manageEducation}>Remove</div>
+                                        <div className="cert-info-wrapper">
+                                            <span>Title:</span>
+                                            <div id="cert-title" key={exp.certTitle}>{exp.certTitle}</div>
+                                        </div>
+                                        <div className="cert-info-wrapper">
+                                            <span>Area of Study:</span>
+                                            <div id="cert-provider" key={exp.certProvider}>{exp.certProvider}</div>
+                                        </div>
+                                        <div className="cert-info-wrapper">
+                                            <span>Description:</span>
+                                            <div id="cert-desc" key={exp.certDesc}>{exp.certDesc}</div>
+                                        </div>
+                                        <div className="cert-info-wrapper">
+                                            <span>Duration:</span>
+                                            <div id="duration-from-to" key={exp.durationFrom}>{exp.durationFrom} / {exp.durationTo}</div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                            
+                        } )}
+                        
+                    </div>
+                )
+            }
     }
 }
 
