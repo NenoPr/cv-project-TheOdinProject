@@ -111,7 +111,7 @@
 
 .extra-info-wrapper {
     display: grid;
-    grid-template: 1fr / 1fr 5fr;
+    grid-template: 1fr / 1fr 7fr;
     gap: 1rem;
 }
 

@@ -27,7 +27,7 @@ class App extends React.Component {
 
     return (
         <div id="main-container">
-          <div id="header"> CV Maker</div>
+          <div id="header"> CV Maker 📝</div>
           <div id="div-holding-print">
             <div ref={el=>this.componentRef=el} id="div-for-printing">
               <CVContainer />
@@ -46,7 +46,7 @@ class App extends React.Component {
           
           </div>
 
-          <div id="footer"> CV Maker by :&nbsp;<img src={require("./GitHub-Mark-32px.png")} alt="Github logo" /><a href='https://github.com/NenoPr'>&nbsp;NenoPr</a></div>
+          <div id="footer"> CV Maker by :&nbsp;<img src={require("./GitHub-Mark-32px.png")} alt="Github logo" /><a href='https://github.com/NenoPr' target={"_blank"}>&nbsp;NenoPr</a></div>
         </div>
     )
   }

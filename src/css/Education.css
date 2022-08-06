@@ -111,7 +111,7 @@
 
 .education-info-wrapper {
     display: grid;
-    grid-template: 1fr / 1fr 5fr;
+    grid-template: 1fr / 1fr 6fr;
     gap: 1rem;
 }
 

@@ -90,10 +90,14 @@ a {
     display: block;
 }
 
+a:visited {
+    color: rgb(75, 96, 254);
+}
+
 .profile-info-wrapper {
     display: grid;
     gap: 1rem;
-    grid-template: 1fr / 1fr 4fr;
+    grid-template: 1fr / 1fr 3.3fr;
     justify-content: space-between;
     align-items: center;
 }
