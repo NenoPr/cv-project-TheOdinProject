@@ -11,9 +11,8 @@
 #add-work-experiences-button {
     position: absolute;
     bottom: .5rem;
-    right: 45%;
-    left: 45%;
-    width: fit-content;
+    left: 40%;
+    width: max-content;
     padding: 1rem;
     background-color: rgb(25, 116, 207);
     border-radius: .5rem;
@@ -51,6 +50,8 @@
     top: 0.1rem;
     right: 6rem;
     padding: .7rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     background-color: rgb(25, 116, 207);
     border-radius: .5rem;
     color: white;
@@ -79,6 +80,8 @@
     top: 0.1rem;
     right: 0.1rem;
     padding: .7rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     background-color: rgb(188, 36, 36);
     border-radius: .5rem;
     color: white;
